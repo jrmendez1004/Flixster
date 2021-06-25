@@ -2,9 +2,7 @@ package com.example.flixster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -15,10 +13,6 @@ import com.bumptech.glide.Glide;
 import com.example.flixster.models.Movie;
 
 import org.parceler.Parcels;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
@@ -36,7 +30,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
         // resolve the view objects
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
+        tvTitle = (TextView) findViewById(R.id.tvTilte);
         tvOverview = (TextView) findViewById(R.id.tvOverview);
         rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage);
         poster = (ImageView) findViewById(R.id.imvPoster);
@@ -53,6 +47,10 @@ public class MovieDetailsActivity extends AppCompatActivity {
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage / 2.0f);
 
-        Glide.with(this).load(movie.getPosterPath()).into(poster);
+        if(this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            Glide.with(this).load(movie.getBackdropPath()).into(poster);
+        else
+            Glide.with(this).load(movie.getPosterPath()).into(poster);
+
     }
 }

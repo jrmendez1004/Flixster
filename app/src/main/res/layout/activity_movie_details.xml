@@ -8,7 +8,7 @@
     tools:context=".MovieDetailsActivity">
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvTilte"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -37,11 +37,12 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="1dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="2dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imvPoster"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTilte"
         tools:text="TextView" />
 
     <RatingBar
@@ -49,7 +50,7 @@
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvTitle"
+        android:layout_below="@+id/tvTilte"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="32dp"
