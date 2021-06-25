@@ -53,6 +53,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage / 2.0f);
 
-
+        Glide.with(this).load(movie.getPosterPath()).into(poster);
     }
 }
